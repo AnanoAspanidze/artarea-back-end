@@ -7,6 +7,16 @@ namespace Artarea.Helper
 {
     public class PasswordHashHelper
     {
-        public static string Password = "KcvCIpmllHwZODYaIutulw";
+        // md5 hash
+
+        public static string Encrypt(string value)
+        {
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                UTF8Encoding utf8 = new UTF8Encoding();
+                byte[] data = md5.ComputeHash(utf8.GetBytes(value));
+                return Convert.ToBase64String(data);
+            }
+        }
     }
 }

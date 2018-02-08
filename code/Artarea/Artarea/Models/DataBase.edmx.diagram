@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="478134cf2bc14893b200dfc2b347c946" Name="Diagram1">
+        <EntityTypeShape EntityType="ArtareaModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.Author" Width="1.5" PointX="0.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.AuthorProgram" Width="1.5" PointX="9" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.AuthorSery" Width="1.5" PointX="9" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.AuthorTranslate" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.Blogpost" Width="1.5" PointX="3.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.BlogpostTranslate" Width="1.5" PointX="6" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.Category" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.CategoryProgram" Width="1.5" PointX="6" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.CategoryTranslate" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.Event" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.EventTranslate" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.File" Width="1.5" PointX="6" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.Filetype" Width="1.5" PointX="3.75" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.Language" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.Program" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.ProgramTranslate" Width="1.5" PointX="6" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.Series" Width="1.5" PointX="3.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.SeriesTranslate" Width="1.5" PointX="6" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtareaModel.sysdiagram" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ArtareaModel.FK_AuthorProgram_Author1" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_AuthorSeries_Author" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_AuthorTranslate_Author" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_Blogpost_Author1" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_AuthorProgram_Program1" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_AuthorSeries_Series1" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_AuthorTranslate_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_BlogpostTranslate_Blogpost" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_BlogpostTranslate_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_CategoryProgram_Category1" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_CategoryTranslate_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_Event_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_CategoryProgram_Program1" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_CategoryTranslate_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_EventTranslate_Event" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_Files_Event1" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_EventTranslate_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_Files_Filetype1" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_ProgramTranslate_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_SeriesTranslate_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_ProgramTranslate_Program" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_Series_Program" ManuallyRouted="false" />
+        <AssociationConnector Association="ArtareaModel.FK_SeriesTranslate_Series" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
