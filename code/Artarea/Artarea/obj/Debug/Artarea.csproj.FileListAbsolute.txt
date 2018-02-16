@@ -1,0 +1,2 @@
+C:\Users\Dato\Desktop\artarea-back-end\code\Artarea\Artarea\obj\Debug\Artarea.csprojResolveAssemblyReference.cache
+C:\Users\Dato\Desktop\artarea-back-end\code\Artarea\Artarea\obj\Debug\Artarea.csproj.CoreCompileInputs.cache

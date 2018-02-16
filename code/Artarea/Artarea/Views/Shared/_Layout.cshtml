@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title </title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="~/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <div class="header-logo">
+                <a href="#"><img src="images/logo.svg"></a>
+            </div>
+            <div class="header-nav" id="affix1" data-spy="affix" data-offset-top="85">
+                <div class="search-div-hidden">
+                    <input type="text" placeholder="ძიება" name="" id="search-input">
+                    <button class="close-button">x</button>
+                </div>
+                <div class="header-nav-search">
+                    <div class="search-div-visible">
+                        <button>ძიება<span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                </div>
+                <div class="header-nav-menu">
+                    <nav>
+                        <ul id="header-nav-menu">
+                            <li><a href="index.html" id="active">მთავარი</a></li>
+                            <li><a href="shows.html">გადაცემები</a></li>
+                            <li><a href="#">ღონისძიებები</a></li>
+                            <li><a href="#">ავტორები</a></li>
+                            <li><a href="#">ბლოგი</a></li>
+                            <li><a href="#">LIVE</a></li>
+                            <li><a href="#">არტარეა გალერეა</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-nav-lang">
+                    <a href="#">ქარ</a>/<a href="#">ENG</a>
+                </div>
+                <div class="menu-button-responsive">
+                    <button>
+                        <div id="bar1"></div>
+                        <div id="bar2"></div>
+                        <div id="bar3"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="header-nav-menu-responsive" id="affix2" data-spy="affix" data-offset-top="85">
+            <nav>
+                <ul id="header-nav-menu-responsive">
+                    <li><a href="index.html" id="active">მთავარი</a></li>
+                    <li><a href="shows.html">გადაცემები</a></li>
+                    <li><a href="#">ღონისძიებები</a></li>
+                    <li><a href="#">ავტორები</a></li>
+                    <li><a href="#">ბლოგი</a></li>
+                    <li><a href="#">LIVE</a></li>
+                    <li><a href="#">არტარეა გალერეა</a></li>
+                    <li><a href="#">ქარ</a>/<a href="#">ENG</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    @RenderBody()
+
+    <footer>
+        <div class="footer">
+            <div class="contact"><a href="contact.html">კონტაქტი</a></div>
+            <div class="social-links">
+                <a href="https://www.youtube.com/watch?v=TQKV_CG_4Ns" target="_blank">fb</a><a href="#">ln</a>
+            </div>
+            <div class="about-us"><a href="#">ჩვენს შესახებ</a></div>
+        </div>
+    </footer>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/js/search-button.js"></script>
+    <script src="~js/menu-button.js"></script>
+</body>
+</html>
