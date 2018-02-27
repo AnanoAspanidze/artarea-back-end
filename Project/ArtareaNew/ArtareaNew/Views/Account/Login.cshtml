@@ -1,0 +1,35 @@
+﻿@model ArtareaNew.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<section class="form-horizontal col-lg-offset-1">
+    <div class="form-group ">
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "cont1 container" }))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class=" form-group">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "ელ.ფოსტა" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "პაროლი" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <p style="color:#e80c4d" class="LoginFailed">@ViewBag.message</p>
+            </div>
+            <div class="form-group ">
+                <button class="submit btn btn-success">შესვლა</button>
+            </div>
+        }
+    </div>
+</section>
+
+

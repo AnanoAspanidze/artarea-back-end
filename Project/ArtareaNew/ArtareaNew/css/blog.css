@@ -1,0 +1,395 @@
+@font-face{
+    font-family: Arial;
+    src:url(../fonts/Arialttf);
+}
+@font-face{
+    font-family: Algeti;
+    src:url(../fonts/BPG_ALGETI.TTF);
+}
+@font-face{
+    font-family: Nino_Mkh;
+    src:url(../fonts/BPG_Nino_Mkh.ttf);
+}
+@font-face{
+    font-family: Nino_Mtavruli_Bold;
+    src:url(../fonts/bpg_nino_mtavruli_bold.ttf);
+}
+@font-face{
+    font-family: Nino_Mtavruli_Normal;
+    src:url(../fonts/bpg_nino_mtavruli_normal.ttf);
+}
+@font-face{
+    font-family: Helvetica;
+    src:url(../fonts/Helvetica.dfont);
+}
+@font-face{
+    font-family: MyriadPro-Bold;
+    src:url(../fonts/MyriadPro-Bold.otf);
+}
+html{
+	 height: 100%;
+}
+body {
+	padding-bottom: 3em;
+	min-height: 100%;
+	position: relative;
+}
+#affix1.affix {
+      top:0;
+      height: 130px;
+      background-color: white;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+#affix2.affix{
+  	position: fixed;
+  	top: 50px;
+  }
+ #active{
+ 	font-family: Nino_Mtavruli_Bold;
+ 	color: #303342;
+ }
+				/* HEADER START */
+
+.header-logo{
+	margin-top: 30px;
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: center;
+}
+.header-logo img{
+	width: 160px;
+	height: 20px;
+}
+.header-wrapper{
+    width: 100%;
+    margin: auto;
+    position: fixed;
+    z-index: 9999;
+    background: white;
+    height: 135px;
+}
+.header-nav{
+	padding-left: 5%;
+	padding-right: 5%;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Nino_Mtavruli_Normal;
+}
+.header-nav-menu ul{
+	display: flex;
+}
+button:focus {
+    outline: none;
+}
+header a{
+	color: #606060;
+}
+
+.header-nav-menu nav ul li:nth-child(1){
+	margin-right: 20px;
+}
+.header-nav-menu nav ul li:nth-child(2){
+	margin-right: 20px;
+}
+.header-nav-menu nav ul li:nth-child(3){
+	margin-right: 20px;
+}
+.header-nav-menu nav ul li:nth-child(5){
+	margin-left: 20px;
+}
+.header-nav-menu nav ul li:nth-child(6){
+	margin-left: 20px;
+}
+.header-nav-menu nav ul li:nth-child(7){
+	margin-left: 20px;
+}
+.menu-button-responsive button{
+	width: 100%;
+}
+.search-div-hidden{
+	display: none;
+}
+.search-div-hidden input{
+	background:transparent;
+	width: 800px;
+	border:0px;
+	padding: 0px;
+	font-size: 16px;
+}
+.search-div-hidden input:focus{
+	outline: none;
+}
+.search-div-hidden button{
+    border: 0px;
+    padding: 0px;
+    background: transparent;
+    font-size: 45px;
+    color: #03aeee;
+}
+.glyphicon{
+	top: 0px;
+}
+.glyphicon-search{
+	padding-left: 13px;
+	font-size: 14px;
+}
+
+				/* HEADER END */
+				/* FOOTER START*/
+
+footer {
+	font-family: Nino_Mtavruli_Bold;
+}
+.footer{
+	width: 90%;
+	margin:auto;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+}
+.footer a{
+	color: #606060;
+}
+.footer .social-links a:first-child{
+	margin-right: 10px;
+}
+footer{
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 25px;
+    
+}
+				/* FOOTER END*/
+				/* MAIN START*/
+
+main{
+	padding-top: 180px;
+	padding-bottom: 50px;
+}
+.blogs{
+	margin-bottom: 80px;
+	line-height: 1;
+}
+.blog-title{
+	font-family: Nino_Mtavruli_Bold;
+	font-size: 18px;
+	margin-bottom: 20px;
+	color: #606060;
+}
+.blog-title h1{
+	margin-bottom: 25px;
+}
+.blog-paragraph{
+	font-size: 17px;
+	font-family: Nino_Mkh;
+	text-indent: 100px;
+	margin-bottom: 10px;
+	color: #606060;
+}
+.blog-author{
+	float: right;
+	font-family: Nino_Mtavruli_Normal;
+	font-size: 18px;
+	color: #606060;
+}
+.blog-image{
+	text-align: center;
+}
+
+
+				/* MAIN END*/
+				/* RESPONSIVE MENU */
+.header-nav-menu-responsive{
+	display: none;
+	font-size: 20px;
+	background-color: white;
+	line-height: 2.5;
+	text-align: center;
+    width: 100%;
+    margin: auto;
+    font-family: Nino_Mtavruli_Normal;
+    position: fixed;
+    z-index: 999;
+    top: 135px;
+}
+.menu-button-responsive{
+	width: 26px;
+}
+.menu-button-responsive #bar1,#bar2,#bar3{
+	transition: all linear .3s;
+	width: 100%;
+	background: #03a0ee;
+	height: 2px;
+}
+.menu-button-responsive #bar2{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#bar1.active{
+	-webkit-transform: translate(0px,4px) rotate(45deg);
+	transform: translate(0px,4px) rotate(45deg);
+}
+#bar3.active{
+	-webkit-transform: translate(0px,-10px) rotate(-45deg);
+	transform: translate(0px,-10px) rotate(-45deg);
+}
+#bar2.active{
+	opacity: 0;
+}
+			/* RESPONSIVE MENU */
+			/* contact-container */
+
+
+/*  xxs ---  0px - 425px    */
+
+
+
+
+
+
+@media screen and (min-width:0px) {
+
+.menu-button-responsive{
+	display: block;
+}
+.header-nav-menu{
+	display: none;
+}
+.header-nav-lang{
+	display: none;
+}
+footer{
+	font-size: 12px;
+}
+.blog-image{
+	margin-bottom: 10px;
+}
+
+}
+
+
+
+/*  extra small == mobile (bootstrap xs) ---  426px - 767px    */
+
+
+
+
+
+
+@media screen and (min-width:426px) {
+
+
+footer{
+	font-size: 13px;
+}
+
+}
+
+
+
+
+/*  small == tablet (bootstrap sm) ---  768px - 991px    */
+
+
+
+
+
+
+@media screen and (min-width:768px) {
+footer{
+	font-size: 14px;
+}
+.container{
+	padding-right: 0px!important;
+    padding-left: 0px!important;
+}
+.blog-image img{
+	width: 225px;
+	height: 200px;
+}
+.blog-image{
+	margin-bottom: 0px;
+}
+}
+
+
+
+
+/*  medium == notebook small (bootstrap md) ---  992px - 1999px    */
+
+
+
+
+
+
+@media screen and (min-width:992px) {
+
+.menu-button-responsive{
+	display: none;
+}
+.header-nav-menu-responsive{
+	display: none!important;
+}
+.header-nav-menu{
+	display: block;
+}
+.header-nav-lang{
+	display: block;	
+	font-size: 16px;
+}
+
+header{
+	font-size: 18px;
+}
+.header-nav-search{
+	font-size: 16px;
+}
+footer{
+	font-size: 16px;
+}
+.container{
+	padding-right: 5%!important;
+    padding-left: 5%!important;
+}
+.blog-image img{
+	width: initial;
+	height: initial;
+}
+}
+
+
+
+/*  large == notebook large (bootstrap lg) ---  1200px +   */
+
+@media screen and (min-width:1200px) {
+
+header{
+	font-size: 20px;
+}
+.header-nav-search{
+	font-size: 16px;
+}
+footer{
+	font-size: 17px;
+}
+.social-links{
+	font-size: 16px;
+}
+.container{
+	padding-right: 10%!important;
+    padding-left: 10%!important;
+}
+
+}
+
+
+
+
+
+
+
+
