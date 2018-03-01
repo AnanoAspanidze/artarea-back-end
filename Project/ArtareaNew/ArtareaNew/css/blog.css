@@ -96,8 +96,9 @@ header a{
 .header-nav-menu nav ul li:nth-child(3){
 	margin-right: 20px;
 }
-.header-nav-menu nav ul li:nth-child(5){
-	margin-left: 20px;
+.header-nav-menu nav ul li:nth-child(5) {
+    margin-left: 20px;
+    font-family: Nino_Mtavruli_Bold;
 }
 .header-nav-menu nav ul li:nth-child(6){
 	margin-left: 20px;

@@ -26,9 +26,6 @@
     font-family: MyriadPro-Bold;
     src:url(../fonts/MyriadPro-Bold.otf);
 }
-#active{
-	font-family: Nino_Mtavruli_Bold;
-}
 html{
 	 height: 100%;
 }
@@ -38,19 +35,23 @@ body {
 	position: relative;
 }
 #affix1.affix {
-	padding-left: 5%;
-    padding-right: 5%;
-    top:0;
-    left: 0px;
-    height: 50px;
-    background-color: lightgrey;
-    width: 100%;
-    z-index: 9999 !important;
+      top:0;
+      height: 130px;
+      background-color: white;
+      width: 100%;
+      z-index: 9999 !important;
   }
 #affix2.affix{
   	position: fixed;
   	top: 50px;
   }
+ #active{
+ 	font-family: Nino_Mtavruli_Bold;
+ 	color: #303342;
+ }
+ #active-root{
+ 	color: #303342!important;
+ }
 				/* HEADER START */
 
 .header-logo{
@@ -67,18 +68,17 @@ body {
     width: 100%;
     margin: auto;
     position: fixed;
-    z-index: 999;
+    z-index: 9999;
     background: white;
     height: 135px;
-
 }
 .header-nav{
+	padding-left: 5%;
+	padding-right: 5%;
 	display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: Nino_Mtavruli_Normal;
-    padding-left: 5%;
-    padding-right: 5%;
 }
 .header-nav-menu ul{
 	display: flex;
@@ -90,26 +90,23 @@ header a{
 	color: #606060;
 }
 
-
-.header-nav-menu nav ul li:nth-child(1) {
-    margin-right: 20px;
-    font-family: Nino_Mtavruli_Bold;
+.header-nav-menu nav ul li:nth-child(1){
+	margin-right: 20px;
 }
-.header-nav-menu nav ul li:nth-child(2) {
-    margin-right: 20px;
+.header-nav-menu nav ul li:nth-child(2){
+	margin-right: 20px;
 }
-.header-nav-menu nav ul li:nth-child(3) {
-    margin-right: 20px;
+.header-nav-menu nav ul li:nth-child(3){
+	margin-right: 20px;
 }
 .header-nav-menu nav ul li:nth-child(5){
 	margin-left: 20px;
 }
-.header-nav-menu nav ul li:nth-child(6) {
-    margin-left: 20px;
+.header-nav-menu nav ul li:nth-child(6){
+	margin-left: 20px;
 }
 .header-nav-menu nav ul li:nth-child(7){
 	margin-left: 20px;
-
 }
 .menu-button-responsive button{
 	width: 100%;
@@ -118,6 +115,7 @@ header a{
 	display: none;
 }
 .search-div-hidden input{
+	background:transparent;
 	width: 800px;
 	border:0px;
 	padding: 0px;
@@ -125,7 +123,6 @@ header a{
 }
 .search-div-hidden input:focus{
 	outline: none;
-	background:transparent;
 }
 .search-div-hidden button{
     border: 0px;
@@ -143,40 +140,6 @@ header a{
 }
 
 				/* HEADER END */
-
-				/* SECTION START */
-
-main{
-	padding-top: 180px;
-    padding-bottom: 50px;
-}
-.home-section{
-	height: 100%;
-	width: 90%;
-	margin:auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Nino_Mtavruli_Normal;
-}
-.home-section .source {
-	width: 100%;
-}
-.home-section .source iframe{
-	width: 100%;
-	height: 450px;
-}
-.home-section .source-heading {
-    margin-top: 15px;
-    line-height: 1;
-}
-.home-section .source-heading a{
-	color: #606060;
-}
-
-				/* SECTION END */
-
-
 				/* FOOTER START*/
 
 footer {
@@ -195,23 +158,6 @@ footer {
 .footer .social-links a:first-child{
 	margin-right: 10px;
 }
-				/* FOOTER END*/
-
-				/* POSITION FIXED */
-
-/*header{
-	position: fixed;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    z-index: 2;
-}*/
-/*main{
-	position: fixed;
-    top: 130px;
-    left: 0%;
-    z-index: 1;
-}*/
 footer{
 	position: absolute;
     bottom: 0;
@@ -220,8 +166,17 @@ footer{
     margin-bottom: 25px;
     
 }
-				/* POSITION FIXED */
+				/* FOOTER END*/
+				/* MAIN START*/
 
+main{
+	padding-top: 180px;
+	padding-bottom: 50px;
+}
+
+
+
+				/* MAIN END*/
 				/* RESPONSIVE MENU */
 .header-nav-menu-responsive{
 	display: none;
@@ -260,8 +215,8 @@ footer{
 #bar2.active{
 	opacity: 0;
 }
-
-
+			/* RESPONSIVE MENU */
+			/* contact-container */
 
 
 /*  xxs ---  0px - 425px    */
@@ -273,22 +228,24 @@ footer{
 
 @media screen and (min-width:0px) {
 
-.menu-button-responsive{
-	display: block;
-}
-.header-nav-menu{
-	display: none;
-}
-.header-nav-lang{
-	display: none;
-}
-.home-section{
-	font-size: 10px;
-}
-footer{
-	font-size: 12px;
-}
-
+	.menu-button-responsive{
+		display: block;
+	}
+	.header-nav-menu{
+		display: none;
+	}
+	.header-nav-lang{
+		display: none;
+	}
+	footer{
+		font-size: 12px;
+	}
+	#root{
+		font-size: 12px;
+	}
+	.iframe-title h2 {
+    font-size: 12px;
+	}
 }
 
 
@@ -303,10 +260,15 @@ footer{
 @media screen and (min-width:426px) {
 
 
-footer{
-	font-size: 13px;
-}
-
+	footer{
+		font-size: 13px;
+	}
+	#root{
+		font-size: 14px;
+	}
+	.iframe-title h2{
+    	font-size: 14px;
+	}
 }
 
 
@@ -320,13 +282,15 @@ footer{
 
 
 @media screen and (min-width:768px) {
-.home-section{
-	font-size: 13px;
-}
-footer{
-	font-size: 14px;
-}
-
+	footer{
+		font-size: 14px;
+	}
+	#root{
+		font-size: 16px;
+	}
+	.iframe-title h2{
+    	font-size: 16px;
+	}
 }
 
 
@@ -341,33 +305,35 @@ footer{
 
 @media screen and (min-width:992px) {
 
-.menu-button-responsive{
-	display: none;
-}
-.header-nav-menu-responsive{
-	display: none!important;
-}
-.header-nav-menu{
-	display: block;
-}
-.header-nav-lang{
-	display: block;	
-	font-size: 16px;
-}
+	.menu-button-responsive{
+		display: none;
+	}
+	.header-nav-menu-responsive{
+		display: none!important;
+	}
+	.header-nav-menu{
+		display: block;
+	}
+	.header-nav-lang{
+		display: block;	
+		font-size: 16px;
+	}
 
-header{
-	font-size: 18px;
-}
-.header-nav-search{
-	font-size: 16px;
-}
-.home-section{
-	font-size: 15px;
-}
-footer{
-	font-size: 16px;
-}
-
+	header{
+		font-size: 18px;
+	}
+	.header-nav-search{
+		font-size: 16px;
+	}
+	footer{
+		font-size: 16px;
+	}
+	#root{
+		font-size: 18px;
+	}
+	.iframe-title h2 {
+    	font-size: 19px;
+	}
 }
 
 
@@ -376,21 +342,56 @@ footer{
 
 @media screen and (min-width:1200px) {
 
-header{
-	font-size: 20px;
-}
-.header-nav-search{
-	font-size: 16px;
-}
-.home-section{
-	font-size: 19px;
-}
-footer{
-	font-size: 17px;
-}
-.social-links{
-	font-size: 16px;
+	header{
+		font-size: 20px;
+	}
+	.header-nav-search{
+		font-size: 16px;
+	}
+	footer{
+		font-size: 17px;
+	}
+
 }
 
 
+
+.row{
+	line-height: 1;
+}
+
+#root{
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-bottom: 35px;
+	font-family: Nino_Mtavruli_Normal;
+}
+#root a{
+	color: #606060;
+}
+
+.iframe-source iframe{
+	width: 100%;
+	height: 450px;
+}
+.iframe-title {
+	margin-top: 15px;
+	text-align: center;
+	margin-bottom: 10px;
+	font-family: Nino_Mtavruli_Normal;
+}
+.iframe-title h2{
+	color: #606060;
+}
+.fb-share-button{
+	text-align: center;
+}
+.fb-share-button a {
+    color: #606060;
+    font-size: 17px;
+}
+.fb-share-button svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
 }

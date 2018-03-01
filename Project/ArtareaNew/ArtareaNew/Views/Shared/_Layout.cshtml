@@ -7,9 +7,8 @@
 
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-   
+
     <link rel="stylesheet" type="text/css" href="~/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="~/css/main.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -23,7 +22,7 @@
     <header>
         <div class="header-wrapper">
             <div class="header-logo">
-                <a href="#"><img src="~/images/logo.svg"></a>
+                <a href="@Url.Action("Index", "Home")"><img src="~/images/logo.svg"></a>
             </div>
             <div class="header-nav">
                 <!--  id="affix1" data-spy="affix" data-offset-top="85" -->
@@ -39,11 +38,11 @@
                 <div class="header-nav-menu">
                     <nav>
                         <ul id="header-nav-menu">
-                            <li><a href="Index" id="active">მთავარი</a></li>
-                            <li><a href="shows.html">გადაცემები</a></li>
+                            <li><a href="@Url.Action("Index", "Home")">მთავარი</a></li>
+                            <li><a href="@Url.Action("Programs", "Program")">გადაცემები</a></li>
                             <li><a href="#">ღონისძიებები</a></li>
                             <li><a href="#">ავტორები</a></li>
-                            <li><a href="blog.html">ბლოგი</a></li>
+                            <li><a href="@Url.Action("Blog", "Blog")">ბლოგი</a></li>
                             <li><a href="#">LIVE</a></li>
                             <li><a href="#">არტარეა გალერეა</a></li>
                         </ul>
@@ -65,11 +64,11 @@
             <!--  id="affix2" data-spy="affix" data-offset-top="85" -->
             <nav>
                 <ul id="header-nav-menu-responsive">
-                    <li><a href="index.html" id="active">მთავარი</a></li>
+                    <li><a href="@Url.Action("Index", "Home")">მთავარი</a></li>
                     <li><a href="shows.html">გადაცემები</a></li>
                     <li><a href="#">ღონისძიებები</a></li>
                     <li><a href="#">ავტორები</a></li>
-                    <li><a href="blog.html">ბლოგი</a></li>
+                    <li><a href="Blog ">ბლოგი</a></li>
                     <li><a href="#">LIVE</a></li>
                     <li><a href="#">არტარეა გალერეა</a></li>
                     <li><a href="#">ქარ</a>/<a href="#">ENG</a></li>
@@ -77,10 +76,10 @@
             </nav>
         </div>
     </header>
-        @RenderBody()
+    @RenderBody()
     <footer>
         <div class="footer">
-            <div class="Contact"><a href="Contact">კონტაქტი</a></div>
+            <div class="Contact"><a href="@Url.Action("Contact", "Home")">კონტაქტი</a></div>
             <div class="social-links">
                 <a href="https://www.youtube.com/watch?v=TQKV_CG_4Ns" target="_blank">fb</a><a href="#">ln</a>
             </div>
@@ -89,5 +88,8 @@
     </footer>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+
+   
+   
 </body>
 </html>
