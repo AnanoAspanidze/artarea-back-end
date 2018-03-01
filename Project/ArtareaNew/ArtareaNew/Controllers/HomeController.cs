@@ -4,10 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace ArtareaNew.Controllers
 {
     public class HomeController : Controller
     {
+
+ 
+
         // GET: Home
         public ActionResult Index()
         {
@@ -19,9 +23,11 @@ namespace ArtareaNew.Controllers
             return View();
         }
 
-        public ActionResult Blog()
+
+        public ActionResult Live()
         {
             return View();
         }
+
     }
 }

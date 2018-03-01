@@ -14,12 +14,12 @@ namespace ArtareaNew.Controllers
             return View();
         }
 
-        public ActionResult VisualArts()
+        public ActionResult ProgramDetails()
         {
             return View();
         }
 
-        public ActionResult Series()
+        public ActionResult Episode()
         {
             return View();
         }

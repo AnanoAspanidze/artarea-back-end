@@ -152,7 +152,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Strartdate" Type="datetime" Nullable="false" />
+          <Property Name="Srartdate" Type="datetime" Nullable="false" />
           <Property Name="Enddate" Type="datetime" Nullable="false" />
           <Property Name="Yeoutubelink" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="isArchive" Type="bit" Nullable="false" />
@@ -776,7 +776,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Strartdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Srartdate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Enddate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Yeoutubelink" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="isArchive" Type="Boolean" Nullable="false" />
@@ -1391,7 +1391,7 @@
             <EntityTypeMapping TypeName="ArtareaModel.Program">
               <MappingFragment StoreEntitySet="Program">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Strartdate" ColumnName="Strartdate" />
+                <ScalarProperty Name="Srartdate" ColumnName="Srartdate" />
                 <ScalarProperty Name="Enddate" ColumnName="Enddate" />
                 <ScalarProperty Name="Yeoutubelink" ColumnName="Yeoutubelink" />
                 <ScalarProperty Name="isArchive" ColumnName="isArchive" />

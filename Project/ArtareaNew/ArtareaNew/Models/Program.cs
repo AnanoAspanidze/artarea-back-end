@@ -24,7 +24,7 @@ namespace ArtareaNew.Models
         }
     
         public int Id { get; set; }
-        public System.DateTime Strartdate { get; set; }
+        public System.DateTime Srartdate { get; set; }
         public System.DateTime Enddate { get; set; }
         public string Yeoutubelink { get; set; }
         public bool isArchive { get; set; }
