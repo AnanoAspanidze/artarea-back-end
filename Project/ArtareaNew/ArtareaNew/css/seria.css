@@ -45,7 +45,7 @@ body {
   	position: fixed;
   	top: 50px;
   }
- #active{
+ .active{
  	font-family: Nino_Mtavruli_Bold;
  	color: #303342;
  }

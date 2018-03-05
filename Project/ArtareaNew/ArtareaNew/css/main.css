@@ -26,7 +26,7 @@
     font-family: MyriadPro-Bold;
     src:url(../fonts/MyriadPro-Bold.otf);
 }
-#active{
+.active{
 	font-family: Nino_Mtavruli_Bold;
 }
 html{
@@ -93,7 +93,7 @@ header a{
 
 .header-nav-menu nav ul li:nth-child(1) {
     margin-right: 20px;
-    font-family: Nino_Mtavruli_Bold;
+    /*font-family: Nino_Mtavruli_Bold;*/
 }
 .header-nav-menu nav ul li:nth-child(2) {
     margin-right: 20px;

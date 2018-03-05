@@ -115,7 +115,6 @@ header a{
 }
 .header-nav-menu nav ul li:nth-child(2) {
     margin-right: 20px;
-    font-family: Nino_Mtavruli_Bold;
 }
 .header-nav-menu nav ul li:nth-child(3){
 	margin-right: 20px;
@@ -205,7 +204,7 @@ main{
 .left-navigation a{
 	color: #606060;
 }
-a#active{
+.active{
 	font-family: Nino_Mtavruli_Bold;
 }
 .row a{

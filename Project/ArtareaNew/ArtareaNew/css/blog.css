@@ -45,7 +45,7 @@ body {
   	position: fixed;
   	top: 50px;
   }
- #active{
+ .active{
  	font-family: Nino_Mtavruli_Bold;
  	color: #303342;
  }
@@ -98,7 +98,6 @@ header a{
 }
 .header-nav-menu nav ul li:nth-child(5) {
     margin-left: 20px;
-    font-family: Nino_Mtavruli_Bold;
 }
 .header-nav-menu nav ul li:nth-child(6){
 	margin-left: 20px;

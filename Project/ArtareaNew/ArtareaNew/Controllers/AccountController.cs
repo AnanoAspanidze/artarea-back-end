@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 namespace ArtareaNew.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         string secret = "5yHsVH4JfZDcapGPKrbhUQ6WHwMJaSZx";
 

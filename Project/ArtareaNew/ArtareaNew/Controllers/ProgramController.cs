@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ArtareaNew.Controllers
 {
-    public class ProgramController : Controller
+    public class ProgramController : BaseController
     {
         // GET: Program
         public ActionResult Programs()
