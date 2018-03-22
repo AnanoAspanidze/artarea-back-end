@@ -16,7 +16,8 @@ namespace ArtareaNew
             routes.MapRoute(
                 name: "Default",
                 url: "{Language}/{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional, Language= "ka-ge" }
+                defaults: new {controller = "Home", action = "Index", id = UrlParameter.Optional, Language= "ka-ge" }
+
             );
         }
     }

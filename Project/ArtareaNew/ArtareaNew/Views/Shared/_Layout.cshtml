@@ -15,6 +15,8 @@
 
     <script src="~/js/search-button.js"></script>
     <script src="~/js/menu-button.js"></script>
+    <script src="~/js/js.js"></script>
+
 
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
@@ -38,7 +40,7 @@
                 <div class="header-nav-menu">
                     <nav>
                         <ul id="header-nav-menu">
-                            <li ><a href="@Url.Action("Index", "Home")">@ArtareaNew.Resources.Index.Home</a></li>
+                            <li ><a href="@Url.Action("Index", "Home")" >@ArtareaNew.Resources.Index.Home</a></li>
                             <li><a href="@Url.Action("Programs", "Program")">@ArtareaNew.Resources.Index.Programs</a></li>
                             <li><a href="#">@ArtareaNew.Resources.Index.Events</a></li>
                             <li><a href="#">@ArtareaNew.Resources.Index.Authors</a></li>
@@ -79,11 +81,11 @@
             <!--  id="affix2" data-spy="affix" data-offset-top="85" -->
             <nav>
                 <ul id="header-nav-menu-responsive">
-                    <li><a href="@Url.Action("Index", "Home")" >მთავარი</a></li>
-                    <li><a href="shows.html">გადაცემები</a></li>
+                    <li><a href="@Url.Action("Index", "Home")">მთავარი</a></li>
+                    <li><a href="@Url.Action("Programs", "Program")">გადაცემები</a></li>
                     <li><a href="#">ღონისძიებები</a></li>
                     <li><a href="#">ავტორები</a></li>
-                    <li><a href="Blog ">ბლოგი</a></li>
+                    <li><a href="@Url.Action("Blog", "Blog")">ბლოგი</a></li>
                     <li><a href="@Url.Action("Live", "Home")">LIVE</a></li>
                     <li><a href="#">არტარეა გალერეა</a></li>
                     <li><a href="#">ქარ</a>/<a href="#">ENG</a></li>
@@ -104,15 +106,7 @@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 
-   <script>
-       $('a').click(function () {
-           //removing the previous selected menu state
-           $('.header-nav-menu').find('li.active').removeClass('active');
-           //adding the state for this parent menu
-           $(this).parents("li").addClass('active');
-
-       });
-   </script>
+  
    
 </body>
 </html>
