@@ -63,3 +63,10 @@ C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\obj\Debug
 C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\obj\Debug\en-us\ArtareaNew.resources.dll
 C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\EPPlus.dll
 C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\EPPlus.xml
+C:\Users\Anano\Documents\GitHub\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\en-us\ArtareaNew.resources.dll
+C:\Users\Anano\Documents\GitHub\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\EPPlus.dll
+C:\Users\Anano\Documents\GitHub\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\EPPlus.xml
+C:\Users\Anano\Documents\GitHub\artarea-back-end\Project\ArtareaNew\ArtareaNew\obj\Debug\ArtareaNew.Resources.Index.resources
+C:\Users\Anano\Documents\GitHub\artarea-back-end\Project\ArtareaNew\ArtareaNew\obj\Debug\ArtareaNew.Resources.Index.en-us.resources
+C:\Users\Anano\Documents\GitHub\artarea-back-end\Project\ArtareaNew\ArtareaNew\obj\Debug\ArtareaNew.csproj.GenerateResource.Cache
+C:\Users\Anano\Documents\GitHub\artarea-back-end\Project\ArtareaNew\ArtareaNew\obj\Debug\en-us\ArtareaNew.resources.dll

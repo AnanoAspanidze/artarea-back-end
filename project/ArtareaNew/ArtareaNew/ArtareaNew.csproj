@@ -244,6 +244,7 @@
     </Compile>
     <Compile Include="Helper\LoginHelper.cs" />
     <Compile Include="Helper\PasswordHashHelper.cs" />
+    <Compile Include="Models\AddAuthor.cs" />
     <Compile Include="Models\Admin.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>

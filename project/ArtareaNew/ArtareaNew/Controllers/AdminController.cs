@@ -25,10 +25,9 @@ namespace ArtareaNew.Controllers
         }
 
         [HttpPost]
-        public ActionResult authorexel(FormCollection formCollection, Author translate)
+        public ActionResult authorexel(FormCollection formCollection)
         {
             ViewBag.result = "";
-            ViewBag.count = "";
 
             var count = 0;
 
@@ -50,7 +49,7 @@ namespace ArtareaNew.Controllers
                         var noOfCol = workSheet.Dimension.End.Column;
                         var noOfRow = workSheet.Dimension.End.Row;
 
-
+                        // ტრიალდება ფორ ციკლი ექსელის ფაილის რიგებზე
                         for (int rowIterator = 2; rowIterator <= noOfRow; rowIterator++)
                         {
                             if (workSheet.Cells[rowIterator, 1].Value != null
@@ -58,85 +57,115 @@ namespace ArtareaNew.Controllers
                                 && workSheet.Cells[rowIterator, 3].Value != null
                                 && workSheet.Cells[rowIterator, 4].Value != null
                                 )
+
                             {
-                                AuthorTranslate newemail = new AuthorTranslate();
-                                newemail.Name = workSheet.Cells[rowIterator, 1].Value.ToString();
-                                newemail.Surname = workSheet.Cells[rowIterator, 2].Value.ToString();
-                                newemail.Biography = workSheet.Cells[rowIterator, 3].Value.ToString();
-                                newemail.Profession = workSheet.Cells[rowIterator, 4].Value.ToString();
-                                newemail.Authorid = translate.Id;
-                                newemail.LangCode = "ka-ge";
-                                newemail.Createdate = DateTime.Now;
 
-                                _db.AuthorTranslates.Add(newemail);
-                                _db.SaveChanges();
+                                try
+                                {
 
-                                count++;
+                                    Author newAuthor = new Author();
+                                    newAuthor.Photo = "default.png";
+                                    newAuthor.Createdate = DateTime.Now;
+                                    _db.Authors.Add(newAuthor);
+
+
+                                    AuthorTranslate newAuthorTranslate = new AuthorTranslate();
+                                    newAuthorTranslate.Name = workSheet.Cells[rowIterator, 1].Value.ToString().Trim();
+                                    newAuthorTranslate.Surname = workSheet.Cells[rowIterator, 2].Value.ToString().Trim();
+                                    newAuthorTranslate.Biography = workSheet.Cells[rowIterator, 3].Value.ToString().Trim();
+                                    newAuthorTranslate.Profession = workSheet.Cells[rowIterator, 4].Value.ToString().Trim();
+                                    newAuthorTranslate.Authorid = newAuthor.Id;
+                                    newAuthorTranslate.LangCode = "ka-ge";
+                                    newAuthorTranslate.Createdate = DateTime.Now;
+                                    _db.AuthorTranslates.Add(newAuthorTranslate);
+
+
+                                    _db.SaveChanges();
+
+
+                                    count++;
+                                }
+
+                                catch
+                                {
+                                    ViewBag.result = "მონაცემთა ჩაწერისას დაფიქსირდა შეცდომა. ჩაიწერა პირველი " + count + " ჩანაწერი. გადაამოწმეთ დოკუმენტი, უკვე ჩაწერილი რიგები წაშალეთ და ახლიდან ატვირთეთ.";
+                                }
+                          
                             }
+
                             else
                             {
-
-                                var all = from c in _db.AuthorTranslates select c;
-                                _db.AuthorTranslates.RemoveRange(all);
-                                _db.SaveChanges();
-
-                                ViewBag.count = "მე-" + (count + 1) + " სვეტში და შეიყვანეთ ინფორმაცია ახლიდან";
-                                ViewBag.result = "შეავსეთ ყველა ველი";
-                                return View();
+                                ViewBag.result = "დაფიქსირდა შეცდომა მე-" + (count + 1) + " რიგში. წაშალეთ ჩაწერილი რიგები, გადაამოწმეთ ინფორმაცია დარჩენილ რიგებში და ატვირთეთ ფაილი. დარწმუნდით, რომ ყველა სვეტი შევსებულია.";
                             }
 
                         }
+
+
+
                     }
 
-                    ViewBag.result = "yay";
-                    ViewBag.count = count;
+                    ViewBag.result = "ყველა მონაცემი წარმატებით ჩაიწერა ბაზაში.";
 
                 }
+
+                else
+                {
+                    ViewBag.result = "მონაცემების ატვირთვა შეუძლებელია. ფაილი არის ცარიელი ან არასწორ ფორმატში.";
+                }
+
             }
 
             else
             {
-                ViewBag.result = "buuu";
-                ViewBag.count = "შეყვანილია "+count+"მონაცემი";
+                ViewBag.result = "დაფიქსირდა შეცდომა ფაილის ატვირთვისას.";
             }
 
-            return RedirectToAction("Index","Admin");
+            return RedirectToAction("Index", "Admin");
         }
 
 
         public ActionResult addauthor()
         {
-
             return View();
         }
 
         [HttpPost]
-        public ActionResult addauthor(Author sss, AuthorTranslate translate)
+        public ActionResult addauthor(AddAuthor model)
         {
 
-            Author ss = new Author();
+            Author newAuthor = new Author();
+            // photo func
+            newAuthor.Photo = model.Photo;
+            newAuthor.Createdate = DateTime.Now;
+            _db.Authors.Add(newAuthor);
 
-            ss.Photo = sss.Photo;
-            ss.Createdate = DateTime.Now;
 
-            _db.Authors.Add(ss);
+            AuthorTranslate newAuthorTranslate = new AuthorTranslate();
+            newAuthorTranslate.Name = model.Name;
+            newAuthorTranslate.Surname = model.Surname;
+            newAuthorTranslate.Profession = model.Profession;
+            newAuthorTranslate.Biography = model.Biography;
+            newAuthorTranslate.Authorid = newAuthor.Id;
+            newAuthorTranslate.LangCode = "ka-ge";
+            newAuthorTranslate.Createdate = DateTime.Now;
+            _db.AuthorTranslates.Add(newAuthorTranslate);
+
+
             _db.SaveChanges();
 
-
-            AuthorTranslate newemail = new AuthorTranslate();
-
-            newemail.Name = translate.Name;
-            newemail.Surname = translate.Surname;
-            newemail.Profession = translate.Profession;
-            newemail.Biography = translate.Biography;
-            newemail.Authorid = sss.Id;
-            newemail.LangCode = "ka-ge";
-            newemail.Createdate = DateTime.Now;
-
-            _db.AuthorTranslates.Add(newemail);
-            _db.SaveChanges();
             return View();
         }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
