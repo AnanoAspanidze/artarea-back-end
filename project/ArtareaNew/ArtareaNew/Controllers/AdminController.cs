@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -78,8 +79,6 @@ namespace ArtareaNew.Controllers
                                     newAuthorTranslate.LangCode = "ka-ge";
                                     newAuthorTranslate.Createdate = DateTime.Now;
                                     _db.AuthorTranslates.Add(newAuthorTranslate);
-
-
                                     _db.SaveChanges();
 
 
@@ -120,6 +119,10 @@ namespace ArtareaNew.Controllers
                 ViewBag.result = "დაფიქსირდა შეცდომა ფაილის ატვირთვისას.";
             }
 
+            var ss = _db.Authors.ToList();
+            ViewBag.ss = ss;
+                
+
             return RedirectToAction("Index", "Admin");
         }
 
@@ -130,12 +133,16 @@ namespace ArtareaNew.Controllers
         }
 
         [HttpPost]
-        public ActionResult addauthor(AddAuthor model)
+        public ActionResult addauthor(AddAuthor model, HttpPostedFileBase file)
         {
 
             Author newAuthor = new Author();
             // photo func
-            newAuthor.Photo = model.Photo;
+
+            string fileName = Random32();
+            string ext = Path.GetExtension(file.FileName);
+            string path = Path.Combine(Server.MapPath("~/Images"), fileName + ext);
+            newAuthor.Photo = model.Photo = fileName + ext;
             newAuthor.Createdate = DateTime.Now;
             _db.Authors.Add(newAuthor);
 
@@ -153,22 +160,15 @@ namespace ArtareaNew.Controllers
 
             _db.SaveChanges();
 
-            return View();
+
+            return RedirectToAction("Index", "Admin");
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+        public static string Random32()
+        {
+            return Guid.NewGuid().ToString("N");
+        }
 
     }
 }
