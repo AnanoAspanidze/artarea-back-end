@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using ArtareaNew.Models;
 using OfficeOpenXml;
+using System.Activities.Statements;
 
 namespace ArtareaNew.Controllers
 {
@@ -13,7 +14,7 @@ namespace ArtareaNew.Controllers
     {
 
         ArtareaEntities _db = new ArtareaEntities();
-        // GET: Admin
+   
         public ActionResult Index()
         {
             return View();
@@ -22,16 +23,32 @@ namespace ArtareaNew.Controllers
 
         public ActionResult authorexel()
         {
-            return View();
+            var list = _db.Authors.ToList();
+            var author = _db.AuthorTranslates.ToList();
+            List<AutorForAdmin> autor = new List<AutorForAdmin>();
+            foreach (var i in list)
+            {
+                autor.Add(new AutorForAdmin
+                {
+                    photo = i.Photo,
+                    name = author.Where(a=>a.Authorid==i.Id).Select(b=>b.Name).FirstOrDefault(),
+                   surname = author.Where(a => a.Authorid == i.Id).Select(b => b.Surname).FirstOrDefault(),
+                   profession = author.Where(a => a.Authorid == i.Id).Select(b => b.Profession).FirstOrDefault(),
+                   leCode = author.Where(a => a.Authorid == i.Id).Select(b => b.LangCode).FirstOrDefault(),
+                biography = author.Where(a => a.Authorid == i.Id).Select(b => b.Biography).FirstOrDefault()
+               });
+
+
+            }
+            return View(autor);
         }
 
         [HttpPost]
         public ActionResult authorexel(FormCollection formCollection)
         {
             ViewBag.result = "";
-
-            var count = 0;
-
+            AuthorTranslate newAuthorTranslate = new AuthorTranslate();
+            var count = 0;           
             if (Request != null)
             {
                 HttpPostedFileBase file = Request.Files["UploadedFile"];
@@ -50,6 +67,25 @@ namespace ArtareaNew.Controllers
                         var noOfCol = workSheet.Dimension.End.Column;
                         var noOfRow = workSheet.Dimension.End.Row;
 
+                        for (int rowIterator = 2; rowIterator <= noOfRow; rowIterator++)
+                        {
+                            if (workSheet.Cells[rowIterator, 1].Value == null
+                                  || workSheet.Cells[rowIterator, 2].Value == null
+                                  || workSheet.Cells[rowIterator, 3].Value == null
+                                  || workSheet.Cells[rowIterator, 4].Value == null
+                                  )
+                            {
+
+                                ViewBag.result1 = "დაფიქსირდა შეცდომა მე-" + (count + 1) + " რიგში. წაშალეთ ჩაწერილი რიგები, გადაამოწმეთ ინფორმაცია დარჩენილ რიგებში და ატვირთეთ ფაილი. დარწმუნდით, რომ ყველა სვეტი შევსებულია.";
+
+                                return View();
+                            }
+
+
+                        }
+
+
+
                         // ტრიალდება ფორ ციკლი ექსელის ფაილის რიგებზე
                         for (int rowIterator = 2; rowIterator <= noOfRow; rowIterator++)
                         {
@@ -63,25 +99,27 @@ namespace ArtareaNew.Controllers
 
                                 try
                                 {
-
-                                    Author newAuthor = new Author();
-                                    newAuthor.Photo = "default.png";
-                                    newAuthor.Createdate = DateTime.Now;
+                                    Author newAuthor = new Author
+                                    {
+                                        Photo = "default.png",
+                                        Createdate = DateTime.Now
+                                    };
                                     _db.Authors.Add(newAuthor);
-
-
-                                    AuthorTranslate newAuthorTranslate = new AuthorTranslate();
                                     newAuthorTranslate.Name = workSheet.Cells[rowIterator, 1].Value.ToString().Trim();
                                     newAuthorTranslate.Surname = workSheet.Cells[rowIterator, 2].Value.ToString().Trim();
                                     newAuthorTranslate.Biography = workSheet.Cells[rowIterator, 3].Value.ToString().Trim();
                                     newAuthorTranslate.Profession = workSheet.Cells[rowIterator, 4].Value.ToString().Trim();
+
                                     newAuthorTranslate.Authorid = newAuthor.Id;
                                     newAuthorTranslate.LangCode = "ka-ge";
                                     newAuthorTranslate.Createdate = DateTime.Now;
                                     _db.AuthorTranslates.Add(newAuthorTranslate);
                                     _db.SaveChanges();
-
-
+                                    ViewBag.result = "ყველა მონაცემი წარმატებით ჩაიწერა ბაზაში.";
+                                    //if (workSheet.Cells[rowIterator, 1].Value.ToString().Trim()==null|| workSheet.Cells[rowIterator, 2].Value.ToString().Trim() == null || workSheet.Cells[rowIterator, 3].Value.ToString().Trim() == null || workSheet.Cells[rowIterator, 4].Value.ToString().Trim() == null)
+                                    //    {
+                                    //        throw new Exception("testg");
+                                    //    }
                                     count++;
                                 }
 
@@ -89,41 +127,21 @@ namespace ArtareaNew.Controllers
                                 {
                                     ViewBag.result = "მონაცემთა ჩაწერისას დაფიქსირდა შეცდომა. ჩაიწერა პირველი " + count + " ჩანაწერი. გადაამოწმეთ დოკუმენტი, უკვე ჩაწერილი რიგები წაშალეთ და ახლიდან ატვირთეთ.";
                                 }
-                          
                             }
-
-                            else
-                            {
-                                ViewBag.result = "დაფიქსირდა შეცდომა მე-" + (count + 1) + " რიგში. წაშალეთ ჩაწერილი რიგები, გადაამოწმეთ ინფორმაცია დარჩენილ რიგებში და ატვირთეთ ფაილი. დარწმუნდით, რომ ყველა სვეტი შევსებულია.";
-                            }
-
                         }
-
-
-
                     }
-
-                    ViewBag.result = "ყველა მონაცემი წარმატებით ჩაიწერა ბაზაში.";
-
                 }
-
                 else
                 {
                     ViewBag.result = "მონაცემების ატვირთვა შეუძლებელია. ფაილი არის ცარიელი ან არასწორ ფორმატში.";
                 }
-
             }
 
             else
             {
                 ViewBag.result = "დაფიქსირდა შეცდომა ფაილის ატვირთვისას.";
             }
-
-            var ss = _db.Authors.ToList();
-            ViewBag.ss = ss;
-                
-
-            return RedirectToAction("Index", "Admin");
+            return View();
         }
 
 
