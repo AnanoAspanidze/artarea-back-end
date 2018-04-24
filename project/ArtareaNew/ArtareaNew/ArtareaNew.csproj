@@ -246,6 +246,7 @@
     <Compile Include="Helper\LoginHelper.cs" />
     <Compile Include="Helper\PasswordHashHelper.cs" />
     <Compile Include="Models\AddAuthor.cs" />
+    <Compile Include="Models\addCategory.cs" />
     <Compile Include="Models\Admin.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
@@ -271,6 +272,7 @@
     <Compile Include="Models\Category.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryForAdmin.cs" />
     <Compile Include="Models\CategoryProgram.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
@@ -359,6 +361,7 @@
     <Content Include="Views\Home\Live.cshtml" />
     <Content Include="Views\Admin\sss.cshtml" />
     <Content Include="Views\Admin\authorexel.cshtml" />
+    <Content Include="Views\Admin\categoryexel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

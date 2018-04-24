@@ -14,13 +14,6 @@
 <h2>addauthor</h2>
 
 
-
-@*@foreach(var item in Model)
-    {
-        @item.Photo
-    }*@
-
-
 @using (Html.BeginForm("authorexel", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 

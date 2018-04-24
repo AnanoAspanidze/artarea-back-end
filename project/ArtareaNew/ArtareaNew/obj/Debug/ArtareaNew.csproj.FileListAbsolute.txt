@@ -43,15 +43,6 @@ C:\Users\Anano\Documents\GitHub\artarea-back-end\Project\ArtareaNew\ArtareaNew\o
 C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\ArtareaNew.dll.config
 C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\ArtareaNew.dll
 C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\ArtareaNew.pdb
-C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\EntityFramework.xml
-C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\EntityFramework.SqlServer.xml
-C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\System.Web.Razor.xml
-C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\System.Web.Webpages.xml
-C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\System.Web.Webpages.Deployment.xml
-C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\System.Web.Webpages.Razor.xml
-C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\System.Web.Helpers.xml
-C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\bin\System.Web.Mvc.xml
 C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\obj\Debug\ArtareaNew.csprojResolveAssemblyReference.cache
 C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\obj\Debug\ArtareaNew.csproj.CoreCompileInputs.cache
 C:\Users\Dato\Documents\artarea-back-end\Project\ArtareaNew\ArtareaNew\obj\Debug\ArtareaNew.dll

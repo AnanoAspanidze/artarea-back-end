@@ -76,15 +76,13 @@ namespace ArtareaNew.Controllers
                                   )
                             {
 
-                                ViewBag.result1 = "დაფიქსირდა შეცდომა მე-" + (count + 1) + " რიგში. წაშალეთ ჩაწერილი რიგები, გადაამოწმეთ ინფორმაცია დარჩენილ რიგებში და ატვირთეთ ფაილი. დარწმუნდით, რომ ყველა სვეტი შევსებულია.";
+                                ViewBag.result1 = "დაფიქსირდა შეცდომა მე-" + (count + 1) + " რიგში. გთხოვთ შეავსოთ ყველა სვეტი.";
 
                                 return View();
                             }
 
 
                         }
-
-
 
                         // ტრიალდება ფორ ციკლი ექსელის ფაილის რიგებზე
                         for (int rowIterator = 2; rowIterator <= noOfRow; rowIterator++)
@@ -186,6 +184,150 @@ namespace ArtareaNew.Controllers
         public static string Random32()
         {
             return Guid.NewGuid().ToString("N");
+        }
+
+
+
+
+
+
+
+        public ActionResult addcategory()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult addcategory(addCategory model)
+        {
+
+            Category newcategory = new Category();
+
+            newcategory.Createdate = DateTime.Now;
+            _db.Categories.Add(newcategory);
+
+
+
+            CategoryTranslate newCategoryTranslate = new CategoryTranslate();
+            newCategoryTranslate.Name = model.Name;
+            newCategoryTranslate.Categoryid = newcategory.Id;
+            newCategoryTranslate.LangCode = "ka-ge";
+            newCategoryTranslate.Createdate = DateTime.Now;
+            _db.CategoryTranslates.Add(newCategoryTranslate);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index", "Admin");
+        }
+
+
+
+
+        public ActionResult categoryexel()
+        {
+            var list = _db.Categories.ToList();
+            var category = _db.CategoryTranslates.ToList();
+            List<CategoryForAdmin> categori = new List<CategoryForAdmin>();
+            foreach (var i in list)
+            {
+                categori.Add(new CategoryForAdmin
+                {
+                    Name = category.Where(a => a.Categoryid == i.Id).Select(b => b.Name).FirstOrDefault(),
+                    leCode = category.Where(a => a.Categoryid == i.Id).Select(b => b.LangCode).FirstOrDefault(),
+                });
+
+
+            }
+            return View(categori);
+        }
+
+
+
+
+        [HttpPost]
+        public ActionResult categoryexel(FormCollection formCollection)
+        {
+            ViewBag.result = "";
+            CategoryTranslate newCategoryTranslate = new CategoryTranslate();
+            var count = 0;
+            if (Request != null)
+            {
+                HttpPostedFileBase file = Request.Files["UploadedFile"];
+
+                if ((file != null) && (file.ContentLength > 0) && !string.IsNullOrEmpty(file.FileName))
+                {
+                    string fileName = file.FileName;
+                    string fileContentType = file.ContentType;
+                    byte[] fileBytes = new byte[file.ContentLength];
+                    var data = file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
+
+                    using (var package = new ExcelPackage(file.InputStream))
+                    {
+                        var currentSheet = package.Workbook.Worksheets;
+                        var workSheet = currentSheet.First();
+                        var noOfCol = workSheet.Dimension.End.Column;
+                        var noOfRow = workSheet.Dimension.End.Row;
+
+                        for (int rowIterator = 2; rowIterator <= noOfRow; rowIterator++)
+                        {
+                            if (workSheet.Cells[rowIterator, 1].Value == null)
+                            {
+
+                                ViewBag.result1 = "დაფიქსირდა შეცდომა მე-" + (count + 1) + " რიგში. გთხოვთ შეავსოთ ყველა სვეტი.";
+
+                                return View();
+                            }
+
+
+                        }
+
+                        // ტრიალდება ფორ ციკლი ექსელის ფაილის რიგებზე
+                        for (int rowIterator = 2; rowIterator <= noOfRow; rowIterator++)
+                        {
+                            if (workSheet.Cells[rowIterator, 1].Value != null)
+
+                            {
+
+                                try
+                                {
+                                    Category newCategory = new Category
+                                    {
+                                        Createdate = DateTime.Now
+                                    };
+                                    _db.Categories.Add(newCategory);
+                                    newCategoryTranslate.Name = workSheet.Cells[rowIterator, 1].Value.ToString().Trim();
+
+                                    newCategoryTranslate.Categoryid = newCategory.Id;
+                                    newCategoryTranslate.LangCode = "ka-ge";
+                                    newCategoryTranslate.Createdate = DateTime.Now;
+                                    _db.CategoryTranslates.Add(newCategoryTranslate);
+                                    _db.SaveChanges();
+                                    ViewBag.result = "ყველა მონაცემი წარმატებით ჩაიწერა ბაზაში.";
+                                    //if (workSheet.Cells[rowIterator, 1].Value.ToString().Trim()==null|| workSheet.Cells[rowIterator, 2].Value.ToString().Trim() == null || workSheet.Cells[rowIterator, 3].Value.ToString().Trim() == null || workSheet.Cells[rowIterator, 4].Value.ToString().Trim() == null)
+                                    //    {
+                                    //        throw new Exception("testg");
+                                    //    }
+                                    count++;
+                                }
+
+                                catch
+                                {
+                                    ViewBag.result = "მონაცემთა ჩაწერისას დაფიქსირდა შეცდომა. ჩაიწერა პირველი " + count + " ჩანაწერი. გადაამოწმეთ დოკუმენტი, უკვე ჩაწერილი რიგები წაშალეთ და ახლიდან ატვირთეთ.";
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    ViewBag.result = "მონაცემების ატვირთვა შეუძლებელია. ფაილი არის ცარიელი ან არასწორ ფორმატში.";
+                }
+            }
+
+            else
+            {
+                ViewBag.result = "დაფიქსირდა შეცდომა ფაილის ატვირთვისას.";
+            }
+            return View();
         }
 
     }
