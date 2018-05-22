@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ArtareaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AuthorProgram">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Authorid" Type="int" Nullable="false" />
+    <Property Name="Programid" Type="int" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AuthorSeries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Authorid" Type="int" Nullable="false" />
+    <Property Name="Seriesid" Type="int" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AuthorTranslate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Authorid" Type="int" Nullable="false" />
+    <Property Name="LangCode" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Biography" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Profession" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Blogpost">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Authorid" Type="int" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlogpostTranslate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Blogpostid" Type="int" Nullable="false" />
+    <Property Name="LangCode" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CategoryProgram">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Programid" Type="int" Nullable="false" />
+    <Property Name="Categoryid" Type="int" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CategoryTranslate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Categoryid" Type="int" Nullable="false" />
+    <Property Name="LangCode" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Startdate" Type="datetime" Nullable="false" />
+    <Property Name="Enddate" Type="datetime" />
+    <Property Name="isArchive" Type="bit" Nullable="false" />
+    <Property Name="Fblink" Type="nvarchar" MaxLength="500" />
+    <Property Name="Categoryid" Type="int" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EventTranslate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Eventid" Type="int" Nullable="false" />
+    <Property Name="LangCode" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Filetypeid" Type="int" Nullable="false" />
+    <Property Name="Articleid" Type="int" Nullable="false" />
+    <Property Name="isMainfile" Type="bit" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Filetype">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="LangCode" />
+    </Key>
+    <Property Name="LangCode" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Program">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Srartdate" Type="datetime" Nullable="false" />
+    <Property Name="Enddate" Type="datetime" Nullable="false" />
+    <Property Name="Yeoutubelink" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="isArchive" Type="bit" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProgramTranslate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Programid" Type="int" Nullable="false" />
+    <Property Name="LangCode" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Datetime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Series">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Programid" Type="int" Nullable="false" />
+    <Property Name="VideoLink" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Episodedate" Type="datetime" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SeriesTranslate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Seriesid" Type="int" Nullable="false" />
+    <Property Name="LangCode" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Createdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_AuthorProgram_Author1">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="AuthorProgram" Type="Self.AuthorProgram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorProgram">
+        <PropertyRef Name="Authorid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorProgram_Program1">
+    <End Role="Program" Type="Self.Program" Multiplicity="1" />
+    <End Role="AuthorProgram" Type="Self.AuthorProgram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorProgram">
+        <PropertyRef Name="Programid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorSeries_Author">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="AuthorSeries" Type="Self.AuthorSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorSeries">
+        <PropertyRef Name="Authorid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorSeries_Series1">
+    <End Role="Series" Type="Self.Series" Multiplicity="1" />
+    <End Role="AuthorSeries" Type="Self.AuthorSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Series">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorSeries">
+        <PropertyRef Name="Seriesid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorTranslate_Author">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="AuthorTranslate" Type="Self.AuthorTranslate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorTranslate">
+        <PropertyRef Name="Authorid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorTranslate_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="AuthorTranslate" Type="Self.AuthorTranslate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LangCode" />
+      </Principal>
+      <Dependent Role="AuthorTranslate">
+        <PropertyRef Name="LangCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Blogpost_Author1">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="Blogpost" Type="Self.Blogpost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Blogpost">
+        <PropertyRef Name="Authorid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogpostTranslate_Blogpost">
+    <End Role="Blogpost" Type="Self.Blogpost" Multiplicity="1" />
+    <End Role="BlogpostTranslate" Type="Self.BlogpostTranslate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blogpost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlogpostTranslate">
+        <PropertyRef Name="Blogpostid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogpostTranslate_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="BlogpostTranslate" Type="Self.BlogpostTranslate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LangCode" />
+      </Principal>
+      <Dependent Role="BlogpostTranslate">
+        <PropertyRef Name="LangCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryProgram_Category1">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="CategoryProgram" Type="Self.CategoryProgram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CategoryProgram">
+        <PropertyRef Name="Categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryProgram_Program1">
+    <End Role="Program" Type="Self.Program" Multiplicity="1" />
+    <End Role="CategoryProgram" Type="Self.CategoryProgram" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CategoryProgram">
+        <PropertyRef Name="Programid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryTranslate_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="CategoryTranslate" Type="Self.CategoryTranslate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CategoryTranslate">
+        <PropertyRef Name="Categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryTranslate_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="CategoryTranslate" Type="Self.CategoryTranslate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LangCode" />
+      </Principal>
+      <Dependent Role="CategoryTranslate">
+        <PropertyRef Name="LangCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="Categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventTranslate_Event">
+    <End Role="Event" Type="Self.Event" Multiplicity="1" />
+    <End Role="EventTranslate" Type="Self.EventTranslate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EventTranslate">
+        <PropertyRef Name="Eventid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventTranslate_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="EventTranslate" Type="Self.EventTranslate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LangCode" />
+      </Principal>
+      <Dependent Role="EventTranslate">
+        <PropertyRef Name="LangCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Files_Event1">
+    <End Role="Event" Type="Self.Event" Multiplicity="1" />
+    <End Role="Files" Type="Self.Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Files">
+        <PropertyRef Name="Articleid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Files_Filetype1">
+    <End Role="Filetype" Type="Self.Filetype" Multiplicity="1" />
+    <End Role="Files" Type="Self.Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Filetype">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Files">
+        <PropertyRef Name="Filetypeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProgramTranslate_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="ProgramTranslate" Type="Self.ProgramTranslate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LangCode" />
+      </Principal>
+      <Dependent Role="ProgramTranslate">
+        <PropertyRef Name="LangCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProgramTranslate_Program">
+    <End Role="Program" Type="Self.Program" Multiplicity="1" />
+    <End Role="ProgramTranslate" Type="Self.ProgramTranslate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProgramTranslate">
+        <PropertyRef Name="Programid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Series_Program">
+    <End Role="Program" Type="Self.Program" Multiplicity="1" />
+    <End Role="Series" Type="Self.Series" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Series">
+        <PropertyRef Name="Programid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SeriesTranslate_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="SeriesTranslate" Type="Self.SeriesTranslate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LangCode" />
+      </Principal>
+      <Dependent Role="SeriesTranslate">
+        <PropertyRef Name="LangCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SeriesTranslate_Series">
+    <End Role="Series" Type="Self.Series" Multiplicity="1" />
+    <End Role="SeriesTranslate" Type="Self.SeriesTranslate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Series">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SeriesTranslate">
+        <PropertyRef Name="Seriesid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ArtareaModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuthorProgram" EntityType="Self.AuthorProgram" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuthorSeries" EntityType="Self.AuthorSeries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuthorTranslate" EntityType="Self.AuthorTranslate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Blogpost" EntityType="Self.Blogpost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BlogpostTranslate" EntityType="Self.BlogpostTranslate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CategoryProgram" EntityType="Self.CategoryProgram" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CategoryTranslate" EntityType="Self.CategoryTranslate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventTranslate" EntityType="Self.EventTranslate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Filetype" EntityType="Self.Filetype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Program" EntityType="Self.Program" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProgramTranslate" EntityType="Self.ProgramTranslate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Series" EntityType="Self.Series" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SeriesTranslate" EntityType="Self.SeriesTranslate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AuthorProgram_Author1" Association="Self.FK_AuthorProgram_Author1">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="AuthorProgram" EntitySet="AuthorProgram" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorProgram_Program1" Association="Self.FK_AuthorProgram_Program1">
+      <End Role="Program" EntitySet="Program" />
+      <End Role="AuthorProgram" EntitySet="AuthorProgram" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorSeries_Author" Association="Self.FK_AuthorSeries_Author">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="AuthorSeries" EntitySet="AuthorSeries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorSeries_Series1" Association="Self.FK_AuthorSeries_Series1">
+      <End Role="Series" EntitySet="Series" />
+      <End Role="AuthorSeries" EntitySet="AuthorSeries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorTranslate_Author" Association="Self.FK_AuthorTranslate_Author">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="AuthorTranslate" EntitySet="AuthorTranslate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorTranslate_Language" Association="Self.FK_AuthorTranslate_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="AuthorTranslate" EntitySet="AuthorTranslate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blogpost_Author1" Association="Self.FK_Blogpost_Author1">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="Blogpost" EntitySet="Blogpost" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogpostTranslate_Blogpost" Association="Self.FK_BlogpostTranslate_Blogpost">
+      <End Role="Blogpost" EntitySet="Blogpost" />
+      <End Role="BlogpostTranslate" EntitySet="BlogpostTranslate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogpostTranslate_Language" Association="Self.FK_BlogpostTranslate_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="BlogpostTranslate" EntitySet="BlogpostTranslate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryProgram_Category1" Association="Self.FK_CategoryProgram_Category1">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="CategoryProgram" EntitySet="CategoryProgram" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryProgram_Program1" Association="Self.FK_CategoryProgram_Program1">
+      <End Role="Program" EntitySet="Program" />
+      <End Role="CategoryProgram" EntitySet="CategoryProgram" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryTranslate_Category" Association="Self.FK_CategoryTranslate_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="CategoryTranslate" EntitySet="CategoryTranslate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryTranslate_Language" Association="Self.FK_CategoryTranslate_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="CategoryTranslate" EntitySet="CategoryTranslate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Category" Association="Self.FK_Event_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventTranslate_Event" Association="Self.FK_EventTranslate_Event">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="EventTranslate" EntitySet="EventTranslate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventTranslate_Language" Association="Self.FK_EventTranslate_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="EventTranslate" EntitySet="EventTranslate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Files_Event1" Association="Self.FK_Files_Event1">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="Files" EntitySet="Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Files_Filetype1" Association="Self.FK_Files_Filetype1">
+      <End Role="Filetype" EntitySet="Filetype" />
+      <End Role="Files" EntitySet="Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProgramTranslate_Language" Association="Self.FK_ProgramTranslate_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="ProgramTranslate" EntitySet="ProgramTranslate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProgramTranslate_Program" Association="Self.FK_ProgramTranslate_Program">
+      <End Role="Program" EntitySet="Program" />
+      <End Role="ProgramTranslate" EntitySet="ProgramTranslate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Series_Program" Association="Self.FK_Series_Program">
+      <End Role="Program" EntitySet="Program" />
+      <End Role="Series" EntitySet="Series" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SeriesTranslate_Language" Association="Self.FK_SeriesTranslate_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="SeriesTranslate" EntitySet="SeriesTranslate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SeriesTranslate_Series" Association="Self.FK_SeriesTranslate_Series">
+      <End Role="Series" EntitySet="Series" />
+      <End Role="SeriesTranslate" EntitySet="SeriesTranslate" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

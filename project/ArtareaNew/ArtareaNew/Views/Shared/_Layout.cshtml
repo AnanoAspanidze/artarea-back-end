@@ -43,7 +43,7 @@
                             <li ><a href="@Url.Action("Index", "Home")" >@ArtareaNew.Resources.Index.Home</a></li>
                             <li><a href="@Url.Action("Programs", "Program")">@ArtareaNew.Resources.Index.Programs</a></li>
                             <li><a href="#">@ArtareaNew.Resources.Index.Events</a></li>
-                            <li><a href="#">@ArtareaNew.Resources.Index.Authors</a></li>
+                            <li><a href="@Url.Action("Index", "Author")">@ArtareaNew.Resources.Index.Authors</a></li>
                             <li><a href="@Url.Action("Blog", "Blog")">@ArtareaNew.Resources.Index.Blog</a></li>
                             <li><a href="@Url.Action("Live", "Home")">LIVE</a></li>
                             <li><a href="#">@ArtareaNew.Resources.Index.ArtareaGallery</a></li>
@@ -100,7 +100,7 @@
             <div class="social-links">
                 <a href="https://www.youtube.com/watch?v=TQKV_CG_4Ns" target="_blank">fb</a><a href="#">ln</a>
             </div>
-            <div class="about-us"><a href="#">@ArtareaNew.Resources.Index.About</a></div>
+            <div class="about-us"><a href="@Url.Action("AboutUs", "Home")">@ArtareaNew.Resources.Index.About</a></div>
         </div>
     </footer>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>

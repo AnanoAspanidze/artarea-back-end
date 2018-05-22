@@ -1,0 +1,83 @@
+﻿
+
+
+@{
+    ViewBag.Title = "addauthor";
+}
+
+<h2>addauthor</h2>
+
+
+
+@*@foreach(var item in Model)
+    {
+        @item.Photo
+    }*@
+
+
+@using (Html.BeginForm("authorexel", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-horizontal" style="margin-left:60px; margin-top:20px;">
+        <h4>შეიტანეთ ინფორმაცია ექსელის ფაილიდან</h4>
+
+        <div class="form-group">
+            <input type="file" name="UploadedFile" class="" />
+        </div>
+        <div class="form-group">
+            <div>
+                <input type="submit" name="Submit" value="Submit" class="btn btn-success " />
+            </div>
+        </div>
+        @ViewBag.result
+        @ViewBag.result1
+    </div>
+}
+
+
+
+@using (Html.BeginForm("addauthor", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-horizontal" style="margin-left:50px; margin-top:100px;">
+        <h4>შეიტანეთ ინფორმაცია ხელით</h4>
+
+        <div class="form-group" style="">
+            <div class="col-md-10">
+                <input type="text" name="Name" class="form-control" placeholder="Name" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10 ">
+                <input type="text" name="Surname" class="form-control" placeholder="Surname" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="text" name="Biography" class="form-control" placeholder="Biography" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="text" name="Profession" class="form-control" placeholder="Profession" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="file" name="file" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-pull-9">
+                <input type="submit" name="Submit" value="Submit" class="btn btn-success" style="margin-left:30px;" />
+            </div>
+        </div>
+
+    </div>
+
+}
