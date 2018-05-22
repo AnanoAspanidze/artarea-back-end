@@ -11,3 +11,4 @@ C:\Users\Anano\Documents\GitHub\artarea-back-end\Project\ArtareaNew\ArtareaNew\o
 C:\Users\Anano\Documents\GitHub\artarea-back-end\Project\ArtareaNew\ArtareaNew\obj\Release\en-us\ArtareaNew.resources.dll
 C:\Users\Anano\Documents\GitHub\artarea-back-end\Project\ArtareaNew\ArtareaNew\obj\Release\ArtareaNew.dll
 C:\Users\Anano\Documents\GitHub\artarea-back-end\Project\ArtareaNew\ArtareaNew\obj\Release\ArtareaNew.pdb
+C:\Users\Anano\Documents\GitHub\artarea-back-end\Project\ArtareaNew\ArtareaNew\obj\Release\ArtareaNew.csprojResolveAssemblyReference.cache

@@ -10,16 +10,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/ArtareaNew.dll">
-      <publishTime>05/22/2018 17:09:54</publishTime>
+      <publishTime>05/23/2018 01:41:26</publishTime>
     </File>
     <File Include="bin/ArtareaNew.dll.config">
-      <publishTime>05/22/2018 15:32:30</publishTime>
+      <publishTime>05/23/2018 01:35:31</publishTime>
     </File>
     <File Include="bin/ArtareaNew.pdb">
-      <publishTime>05/22/2018 17:09:54</publishTime>
+      <publishTime>05/23/2018 01:41:26</publishTime>
     </File>
     <File Include="bin/en-us/ArtareaNew.resources.dll">
-      <publishTime>05/22/2018 17:09:59</publishTime>
+      <publishTime>05/23/2018 01:41:28</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>05/22/2018 15:32:31</publishTime>
@@ -234,6 +234,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="css/shows.css">
       <publishTime>05/22/2018 15:32:31</publishTime>
     </File>
+    <File Include="fonts/Arial.ttf">
+      <publishTime>05/22/2018 15:32:31</publishTime>
+    </File>
+    <File Include="fonts/BPG_ALGETI.TTF">
+      <publishTime>05/22/2018 15:32:31</publishTime>
+    </File>
+    <File Include="fonts/BPG_Nino_Mkh.ttf">
+      <publishTime>05/22/2018 15:32:31</publishTime>
+    </File>
+    <File Include="fonts/bpg_nino_mtavruli_bold.ttf">
+      <publishTime>05/22/2018 15:32:32</publishTime>
+    </File>
+    <File Include="fonts/bpg_nino_mtavruli_normal.ttf">
+      <publishTime>05/22/2018 15:32:32</publishTime>
+    </File>
     <File Include="fonts/glyphicons-halflings-regular.eot">
       <publishTime>05/22/2018 15:32:32</publishTime>
     </File>
@@ -246,6 +261,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="fonts/glyphicons-halflings-regular.woff">
       <publishTime>05/22/2018 15:32:32</publishTime>
     </File>
+    <File Include="fonts/Helvetica.dfont">
+      <publishTime>05/22/2018 15:32:32</publishTime>
+    </File>
+    <File Include="fonts/MyriadPro-Bold.otf">
+      <publishTime>05/22/2018 15:32:32</publishTime>
+    </File>
     <File Include="Global.asax">
       <publishTime>05/22/2018 15:32:29</publishTime>
     </File>
@@ -256,6 +277,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/22/2018 15:32:32</publishTime>
     </File>
     <File Include="images/logo.svg">
+      <publishTime>05/22/2018 15:32:32</publishTime>
+    </File>
+    <File Include="js/js.js">
       <publishTime>05/22/2018 15:32:32</publishTime>
     </File>
     <File Include="js/menu-button.js">
@@ -343,13 +367,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/22/2018 16:42:42</publishTime>
     </File>
     <File Include="Views/web.config">
-      <publishTime>05/22/2018 17:12:33</publishTime>
+      <publishTime>05/23/2018 01:35:19</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
       <publishTime>05/22/2018 15:32:30</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/22/2018 16:51:46</publishTime>
+      <publishTime>05/23/2018 01:36:32</publishTime>
     </File>
   </ItemGroup>
 </Project>
